@@ -1,0 +1,38 @@
+var questions = [
+{
+	"question" : "How many phonemes are in the word straight?",
+	"answers" : [
+		{"answer" : "Four", "correct" : "false"},
+		{"answer" : "Five", "correct" : "true"},
+		{"answer" : "Six", "correct" : "false"},
+		{"answer" : "Eight", "correct" : "false"}
+	]
+},
+{
+	"question" : "Un-, con-, -est and morph- are all examples of ___________.",
+	"answers" : [
+		{"answer" : "irregular words", "correct" : "false"},
+		{"answer" : "rime", "correct" : "false"},
+		{"answer" : "morphemes", "correct" : "true"},
+		{"answer" : "graphophonemic knowledge", "correct" : "false"}
+	]
+},
+{
+	"question" : "Prosody is the ability to ________________.",
+	"answers" : [
+		{"answer" : "read with expression", "correct" : "true"},
+		{"answer" : "decode text quickly", "correct" : "false"},
+		{"answer" : "read for meaning", "correct" : "false"},
+		{"answer" : "speak a foreign language", "correct" : "false"}
+	]
+},
+{
+	"question" : "Prosody is a component of ________________.",
+	"answers" : [
+		{"answer" : "automaticity", "correct" : "false"},
+		{"answer" : "fluency", "correct" : "true"},
+		{"answer" : "comprehension", "correct" : "false"},
+		{"answer" : "phoneme awareness", "correct" : "false"}
+	]
+}
+];

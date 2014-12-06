@@ -1,0 +1,6 @@
+var scores = [
+	{"score":50},
+	{"score":75},
+	{"score":50},
+	{"score":100}
+];
