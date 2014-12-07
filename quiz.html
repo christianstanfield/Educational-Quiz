@@ -39,11 +39,11 @@
                     $('#answers-' + question),
                     $('#submit')]);        
       } else {
-        parent.location='results.html';
+        answers = answers.join('&');
+        parent.location='results.html?' + answers;
       }
     });
   });
-
 </script>
   
 </body>

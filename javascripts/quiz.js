@@ -20,8 +20,8 @@ function showQuestions(arr, i) {
 		}
 		if (j === 1) { text += '<br>' }
 	}
-	text += '</div>';
 
-text += '<h1 id="score"></h1><input id="submit" type="submit" value="Submit Answers"></form>';
-document.getElementById("questions").innerHTML = text;
+	text += '<h1></h1><input id="submit" type="submit" value="Submit Answers"></form>';
+	text += '</div>';
+	document.getElementById("questions").innerHTML = text;
 }
