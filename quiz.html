@@ -5,6 +5,8 @@
   <title>Web Quiz</title>
   <script type="text/javascript" src="javascripts/question.json"></script>
   <script type="text/javascript" src="javascripts/quiz.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="javascripts/text_animation.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
 </head>
@@ -13,7 +15,35 @@
 <div id="questions"></div>
 
 <script>
-  showQuestions(questions);
+  var question = 0;
+  var answers = [];
+  showQuestions(questions, question);
+
+  fadeinText([$('h3'),
+              $('h4'),
+              $('#answers-0'),
+              $('#submit')]);
+
+  $(function() {
+    $('body').on('submit', 'form', function(event){
+      event.preventDefault();
+      var data = $(this).serialize();
+      answers.push(data);
+      
+      if (question < questions.length-1) {
+        question += 1;
+        showQuestions(questions, question);
+
+        fadeinText([$('h3'),
+                    $('h4'),
+                    $('#answers-' + question),
+                    $('#submit')]);        
+      } else {
+        parent.location='results.html';
+      }
+    });
+  });
+
 </script>
   
 </body>
