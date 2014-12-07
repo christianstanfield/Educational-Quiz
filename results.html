@@ -1,15 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Web Quiz</title>
-<script type="text/javascript" src="question.json"></script>
-<script type="text/javascript" src="results.json"></script>
-<script type="text/javascript" src="results.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Web Quiz</title>
+  <script type="text/javascript" src="javascripts/question.json"></script>
+  <script type="text/javascript" src="javascripts/results.json"></script>
+  <script type="text/javascript" src="javascripts/results.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="javascripts/text_animation.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
 </head>
 <body>
+
 <div id="results"></div>
+
 <script>
-showResults(questions);
+  showResults(questions);
+
+  fadeinText([$('h1').eq(0),
+              $('h1').eq(1),
+              $('#question_results')]);
 </script>
+  
 </body>
 </html>

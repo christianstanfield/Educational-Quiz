@@ -1,14 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Web Quiz</title>
-<script type="text/javascript" src="question.json"></script>
-<script type="text/javascript" src="quiz.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Web Quiz</title>
+  <script type="text/javascript" src="javascripts/question.json"></script>
+  <script type="text/javascript" src="javascripts/quiz.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="javascripts/text_animation.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
 </head>
 <body>
+
 <div id="questions"></div>
+
 <script>
-showQuestions(questions);
+  var question = 0;
+  var answers = [];
+  showQuestions(questions, question);
+
+  fadeinText([$('h3'),
+              $('h4'),
+              $('#answers-0'),
+              $('#submit')]);
+
+  $(function() {
+    $('body').on('submit', 'form', function(event){
+      event.preventDefault();
+      var data = $(this).serialize();
+      answers.push(data);
+      
+      if (question < questions.length-1) {
+        question += 1;
+        showQuestions(questions, question);
+
+        fadeinText([$('h3'),
+                    $('h4'),
+                    $('#answers-' + question),
+                    $('#submit')]);        
+      } else {
+        answers = answers.join('&');
+        parent.location='results.html?' + answers;
+      }
+    });
+  });
 </script>
+  
 </body>
 </html>

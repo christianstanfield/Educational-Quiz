@@ -1,15 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Web Quiz</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Web Quiz</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="javascripts/text_animation.js"></script>
 </head>
 <body>
+  
 <div id="welcome">
-<h1>Welcome to your course!</h1><br /><br />
-<h2>Before you begin your studies, we have a short quiz to test your knowledge. Click the "Start Quiz" button below to begin.</h2><br /><br />
-<form>
-<input id="start" type="button" value="Start Quiz" onclick="parent.location='quiz.html'">
-</form>
+  <h1>WELCOME TO YOUR COURSE</h1>
+  <h2>Before you begin your studies,</h2>
+  <h2>we have a short quiz to test your knowledge.</h2>
+  <h2>Click the "Start Quiz" button below to begin.</h2>
+  <form>
+    <input id="start" type="button" value="Start Quiz" onclick="parent.location='quiz.html'">
+  </form>
 </div>
+
+<script>
+  fadeinText([$('h1'),
+              $('h2').eq(0),
+              $('h2').eq(1),
+              $('h2').eq(2),
+              $('#start')]);
+</script>
+
 </body>
 </html>
