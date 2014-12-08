@@ -61,6 +61,10 @@ label {
   margin-bottom: 75px;
 }
 
+#results {
+  text-align: center;
+}
+
 /* BUTTONS */
 #start, #submit {
   padding: 10px;
