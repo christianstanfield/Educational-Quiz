@@ -1,6 +1,7 @@
 function showResults(arr) {
   var text = '<h1 id="score"></h1><h1 id="average"></h1>';
   text += '<div id="question_results">'
+  text += '<form><input id="prev_score" type="hidden" value=""><input id="start" type="button" value="Retake Quiz" onclick="parent.location=' + "'quiz.html'" + '"></form>'
   var i;
 
 //loop through all questions in json
@@ -68,9 +69,14 @@ function showResults(arr) {
 
   var score = count / 4 * 100;
   document.getElementById('score').innerHTML = 'Your score is ' + score + '%';
+  document.getElementById('prev_score').value = score;
 
 	//add score to json array
-	scores.push({"score":score});
+  scores.push({"score":score});
+
+  // NOT WORKING
+	// document.cookie['scores'].push({"score":score});
+  // var scores = document.cookie['scores'];
 
 	//add all scores together and divide by the length to get the average
 	var i;
