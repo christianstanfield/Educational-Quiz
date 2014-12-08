@@ -13,6 +13,7 @@ function showResults(arr) {
 
     text += '<h3>Question ' + (i + 1) + '</h3>' +
             '<h4>' + arr[i].question + '</h4>' +
+            '<div id="chart-' + i + '"></div>' +
             '<div id="answers-' + i + '">';
     var j;
 //loop through all answers
