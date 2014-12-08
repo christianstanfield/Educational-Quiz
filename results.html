@@ -8,6 +8,8 @@
   <script type="text/javascript" src="javascripts/results.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="javascripts/text_animation.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="javascripts/chart.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
 </head>
@@ -18,10 +20,14 @@
 <script>
   showResults(questions);
 
+  for (var i = 0; i < questions.length; i++) {
+    createChart(questions[i].answers, i);
+    console.log(questions[i].answers);
+  };
+
   fadeinText([$('h1').eq(0),
               $('h1').eq(1),
               $('#question_results')]);
 </script>
-  
 </body>
 </html>
